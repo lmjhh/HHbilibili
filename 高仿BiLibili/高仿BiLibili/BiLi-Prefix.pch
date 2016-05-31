@@ -1,0 +1,64 @@
+//
+//  PrefixHeader.pch
+//  高仿BiLibili
+//
+//  Created by 黄人煌 on 16/5/2.
+//  Copyright © 2016年 黄人煌. All rights reserved.
+//
+
+#ifndef BiLi//-Prefix
+#define BiLi-Prefix
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import <Masonry/Masonry.h>
+#import "MJExtension.h"
+#import "FMDB.h"
+@import SDWebImage;
+
+#import "BaseViewController.h"
+#import "BaseNavigationController.h"
+#import "UIColor+Extension.h"
+#import "NSDate+Extension.h"
+#import "UILabel+StringFrame.h"
+#import "NSString+Extension.h"
+#import "BiLi_NetAPIManager.h"
+
+#endif
+
+// APP主题颜色
+#define BMainColor [UIColor colorWithCustom:251 green:114 blue:153]
+#define BNavTintColor [UIColor colorWithCustom:145 green:145 blue:141]
+#define BBackgroundColor [UIColor colorWithCustom:242 green:244 blue:244]
+
+// 常用变量
+#define BScreen_Bounds [UIScreen mainScreen].bounds
+#define BScreen_Height [UIScreen mainScreen].bounds.size.height
+#define BScreen_Width [UIScreen mainScreen].bounds.size.width
+
+#define BPlachImageBack [UIImage imageNamed:@"videopic_default"]
+#define BPlachIcon [UIImage imageNamed:@"misc_avatarDefault_50x50"]
+
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
+
+/**
+ *  Docment文件夹目录
+ */
+#define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject
+
+/**
+ *  下载文件夹目录
+ */
+#define kDownloadPath [kDocumentPath stringByAppendingPathComponent: @"download"]
+/**
+ *  VideoModel归档文件夹目录
+ */
+#define kArchPath [kDocumentPath stringByAppendingPathComponent: @"arch"]

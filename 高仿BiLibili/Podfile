@@ -1,0 +1,16 @@
+
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, ‘9.0’
+
+use_frameworks!
+
+
+target ‘高仿BiLibili’ do
+
+pod 'AFNetworking', '~> 3.0'
+pod 'MJExtension'
+pod 'Masonry'
+pod 'SDWebImage', '~>3.7'
+pod 'FMDB'
+
+end

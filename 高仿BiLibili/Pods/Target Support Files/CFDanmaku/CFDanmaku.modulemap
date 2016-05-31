@@ -1,0 +1,6 @@
+framework module CFDanmaku {
+  umbrella header "CFDanmaku-umbrella.h"
+
+  export *
+  module * { export * }
+}
