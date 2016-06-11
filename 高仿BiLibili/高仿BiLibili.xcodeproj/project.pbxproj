@@ -10,8 +10,10 @@
 		320923E01CFC298000A011F2 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 320923DF1CFC298000A011F2 /* UILabel+StringFrame.m */; };
 		320923E51CFC7AB500A011F2 /* BPData.m in Sources */ = {isa = PBXBuildFile; fileRef = 320923E41CFC7AB500A011F2 /* BPData.m */; };
 		320923E81CFC8B1400A011F2 /* BPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 320923E71CFC8B1400A011F2 /* BPView.m */; };
-		320923EB1CFD74DF00A011F2 /* FanintroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 320923EA1CFD74DF00A011F2 /* FanintroductionCell.m */; };
-		320923ED1CFD750100A011F2 /* FanintroductionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320923EC1CFD750100A011F2 /* FanintroductionCell.xib */; };
+		321C3AC91D0028AC00FBD5E2 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3AC81D0028AC00FBD5E2 /* CommonModel.m */; };
+		321C3ACC1D00336600FBD5E2 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3ACB1D00336600FBD5E2 /* NSDictionary+Extension.m */; };
+		321C3AD01D00899D00FBD5E2 /* CommonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3ACF1D00899D00FBD5E2 /* CommonsTableViewCell.m */; };
+		321C3AD21D008C4500FBD5E2 /* CommonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321C3AD11D008C4500FBD5E2 /* CommonsTableViewCell.xib */; };
 		3254A4281CDB86E2002E4830 /* HomeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4271CDB86E2002E4830 /* HomeData.m */; };
 		3254A42B1CDC7671002E4830 /* BiLiHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A42A1CDC7671002E4830 /* BiLiHotView.m */; };
 		3254A42F1CDCF5BD002E4830 /* HomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A42E1CDCF5BD002E4830 /* HomeTableHeadView.m */; };
@@ -31,6 +33,7 @@
 		3254A47F1CE4E0A3002E4830 /* 最新直播3 in Resources */ = {isa = PBXBuildFile; fileRef = 3254A47E1CE4E0A3002E4830 /* 最新直播3 */; };
 		3254A4811CE4E0B4002E4830 /* 最新直播4 in Resources */ = {isa = PBXBuildFile; fileRef = 3254A4801CE4E0B4002E4830 /* 最新直播4 */; };
 		3254A4861CE4EEC7002E4830 /* Live_ColCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4841CE4EEC7002E4830 /* Live_ColCollectionViewCell.m */; };
+		327476F31CFE9863003FCDA6 /* FanIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327476F21CFE9863003FCDA6 /* FanIntroductionView.m */; };
 		32A3A88F1CEE0D3B00B1BFB1 /* VideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3A88E1CEE0D3B00B1BFB1 /* VideoPlayViewController.m */; };
 		32A3A8CA1CEE3C4D00B1BFB1 /* @$91X`{7~B}~XP0C[DG~XDI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32A3A8921CEE3C4D00B1BFB1 /* @$91X`{7~B}~XP0C[DG~XDI.jpg */; };
 		32A3A8CB1CEE3C4D00B1BFB1 /* bg_share_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 32A3A8931CEE3C4D00B1BFB1 /* bg_share_large.png */; };
@@ -208,9 +211,13 @@
 		320923E41CFC7AB500A011F2 /* BPData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPData.m; sourceTree = "<group>"; };
 		320923E61CFC8B1400A011F2 /* BPView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BPView.h; path = ../../HomeView/Bangumi/BPView.h; sourceTree = "<group>"; };
 		320923E71CFC8B1400A011F2 /* BPView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BPView.m; path = ../../HomeView/Bangumi/BPView.m; sourceTree = "<group>"; };
-		320923E91CFD74DF00A011F2 /* FanintroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanintroductionCell.h; sourceTree = "<group>"; };
-		320923EA1CFD74DF00A011F2 /* FanintroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanintroductionCell.m; sourceTree = "<group>"; };
-		320923EC1CFD750100A011F2 /* FanintroductionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FanintroductionCell.xib; sourceTree = "<group>"; };
+		321C3AC71D0028AC00FBD5E2 /* CommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
+		321C3AC81D0028AC00FBD5E2 /* CommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
+		321C3ACA1D00336600FBD5E2 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		321C3ACB1D00336600FBD5E2 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		321C3ACE1D00899D00FBD5E2 /* CommonsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonsTableViewCell.h; sourceTree = "<group>"; };
+		321C3ACF1D00899D00FBD5E2 /* CommonsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonsTableViewCell.m; sourceTree = "<group>"; };
+		321C3AD11D008C4500FBD5E2 /* CommonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonsTableViewCell.xib; sourceTree = "<group>"; };
 		3254A4261CDB86E2002E4830 /* HomeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeData.h; sourceTree = "<group>"; };
 		3254A4271CDB86E2002E4830 /* HomeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeData.m; sourceTree = "<group>"; };
 		3254A4291CDC7671002E4830 /* BiLiHotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BiLiHotView.h; path = BaseView/BiLiHotView.h; sourceTree = "<group>"; };
@@ -240,6 +247,8 @@
 		3254A4801CE4E0B4002E4830 /* 最新直播4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "最新直播4"; sourceTree = "<group>"; };
 		3254A4831CE4EEC7002E4830 /* Live_ColCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Live_ColCollectionViewCell.h; sourceTree = "<group>"; };
 		3254A4841CE4EEC7002E4830 /* Live_ColCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Live_ColCollectionViewCell.m; sourceTree = "<group>"; };
+		327476F11CFE9863003FCDA6 /* FanIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanIntroductionView.h; sourceTree = "<group>"; };
+		327476F21CFE9863003FCDA6 /* FanIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanIntroductionView.m; sourceTree = "<group>"; };
 		32A3A88D1CEE0D3B00B1BFB1 /* VideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayViewController.h; sourceTree = "<group>"; };
 		32A3A88E1CEE0D3B00B1BFB1 /* VideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayViewController.m; sourceTree = "<group>"; };
 		32A3A8921CEE3C4D00B1BFB1 /* @$91X`{7~B}~XP0C[DG~XDI.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "@$91X`{7~B}~XP0C[DG~XDI.jpg"; sourceTree = "<group>"; };
@@ -491,6 +500,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321C3ACD1D00894300FBD5E2 /* CommonsVIew */ = {
+			isa = PBXGroup;
+			children = (
+				321C3ACE1D00899D00FBD5E2 /* CommonsTableViewCell.h */,
+				321C3ACF1D00899D00FBD5E2 /* CommonsTableViewCell.m */,
+				321C3AD11D008C4500FBD5E2 /* CommonsTableViewCell.xib */,
+			);
+			path = CommonsVIew;
+			sourceTree = "<group>";
+		};
 		3254A42C1CDCF5A0002E4830 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,6 +901,8 @@
 				32CEFFB71CECD4BE0099E546 /* NSString+Extension.m */,
 				320923DE1CFC298000A011F2 /* UILabel+StringFrame.h */,
 				320923DF1CFC298000A011F2 /* UILabel+StringFrame.m */,
+				321C3ACA1D00336600FBD5E2 /* NSDictionary+Extension.h */,
+				321C3ACB1D00336600FBD5E2 /* NSDictionary+Extension.m */,
 			);
 			path = OC_Category;
 			sourceTree = "<group>";
@@ -932,6 +953,8 @@
 				32A3A9441CEF816800B1BFB1 /* DanMuModel.m */,
 				320923E31CFC7AB500A011F2 /* BPData.h */,
 				320923E41CFC7AB500A011F2 /* BPData.m */,
+				321C3AC71D0028AC00FBD5E2 /* CommonModel.h */,
+				321C3AC81D0028AC00FBD5E2 /* CommonModel.m */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -953,6 +976,7 @@
 			children = (
 				32CEFF9E1CEC1CA40099E546 /* FanDetailView */,
 				32A3A9011CEF38C700B1BFB1 /* VideoPlayerView */,
+				321C3ACD1D00894300FBD5E2 /* CommonsVIew */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -970,9 +994,8 @@
 				32CEFFBB1CECEE760099E546 /* SelectVideoView.m */,
 				320923E61CFC8B1400A011F2 /* BPView.h */,
 				320923E71CFC8B1400A011F2 /* BPView.m */,
-				320923E91CFD74DF00A011F2 /* FanintroductionCell.h */,
-				320923EA1CFD74DF00A011F2 /* FanintroductionCell.m */,
-				320923EC1CFD750100A011F2 /* FanintroductionCell.xib */,
+				327476F11CFE9863003FCDA6 /* FanIntroductionView.h */,
+				327476F21CFE9863003FCDA6 /* FanIntroductionView.m */,
 			);
 			path = FanDetailView;
 			sourceTree = "<group>";
@@ -1205,6 +1228,7 @@
 				32A3A8E81CEE3C4D00B1BFB1 /* logo.qq.com.png in Resources */,
 				3254A4751CE4E00C002E4830 /* 最热直播2 in Resources */,
 				32A3A8FB1CEE3C4D00B1BFB1 /* playBtn@3x.png in Resources */,
+				321C3AD21D008C4500FBD5E2 /* CommonsTableViewCell.xib in Resources */,
 				32A3A8D61CEE3C4D00B1BFB1 /* logo.fun.tv.png in Resources */,
 				32A3A8D71CEE3C4D00B1BFB1 /* logo.fun.tv@2x.png in Resources */,
 				32A3A8F91CEE3C4D00B1BFB1 /* playBtn.png in Resources */,
@@ -1264,7 +1288,6 @@
 				32A3A8CF1CEE3C4D00B1BFB1 /* gobackBtn@2x.png in Resources */,
 				32A3A8F11CEE3C4D00B1BFB1 /* logo.xunlei.com@2x.png in Resources */,
 				32A3A8DD1CEE3C4D00B1BFB1 /* logo.iqiyi.com@2x.png in Resources */,
-				320923ED1CFD750100A011F2 /* FanintroductionCell.xib in Resources */,
 				32A3A8F61CEE3C4D00B1BFB1 /* pauseBtn.png in Resources */,
 				32A3A8F21CEE3C4D00B1BFB1 /* logo.youku.com.png in Resources */,
 				32E3989B1CDA25AC000EB5B0 /* 番剧推荐6.txt in Resources */,
@@ -1353,6 +1376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321C3ACC1D00336600FBD5E2 /* NSDictionary+Extension.m in Sources */,
 				32CEFF941CEB202B0099E546 /* EndView.m in Sources */,
 				3254A42B1CDC7671002E4830 /* BiLiHotView.m in Sources */,
 				3254A43F1CE0E686002E4830 /* BiLiRefreshButton.m in Sources */,
@@ -1364,11 +1388,11 @@
 				32A3A9481CEF81D100B1BFB1 /* XML2Dic.m in Sources */,
 				32CEFF6E1CE5CD240099E546 /* NinaBaseView.m in Sources */,
 				32CEFFBF1CED85270099E546 /* SelectSeasonsView.m in Sources */,
-				320923EB1CFD74DF00A011F2 /* FanintroductionCell.m in Sources */,
 				32CEFF971CEB46820099E546 /* NSString+MD5.m in Sources */,
 				320923E81CFC8B1400A011F2 /* BPView.m in Sources */,
 				32A3A9371CEF7E0B00B1BFB1 /* BarrageWalkImageSpirit.m in Sources */,
 				32CEFFB81CECD4BE0099E546 /* NSString+Extension.m in Sources */,
+				321C3AD01D00899D00FBD5E2 /* CommonsTableViewCell.m in Sources */,
 				32A3A93C1CEF7EB800B1BFB1 /* StrokeUILabel.m in Sources */,
 				3254A44B1CE4A68E002E4830 /* Live_MostNewViewController.m in Sources */,
 				32A3A93F1CEF7F1F00B1BFB1 /* VideoModel.m in Sources */,
@@ -1400,6 +1424,7 @@
 				32B658A01CD4CEB10050C704 /* BiLi_NetAPIManager.m in Sources */,
 				32B658E71CD4F3870050C704 /* NSObject+ObjectMap.m in Sources */,
 				32E3984D1CD78F8D000EB5B0 /* Home_TheatreViewController.m in Sources */,
+				327476F31CFE9863003FCDA6 /* FanIntroductionView.m in Sources */,
 				3254A4281CDB86E2002E4830 /* HomeData.m in Sources */,
 				32E3985E1CD91B4C000EB5B0 /* LaunchScreen.m in Sources */,
 				32CEFF9B1CEB87370099E546 /* FanData.m in Sources */,
@@ -1423,6 +1448,7 @@
 				32A3A9421CEF806B00B1BFB1 /* VideoViewModel.m in Sources */,
 				32A3A88F1CEE0D3B00B1BFB1 /* VideoPlayViewController.m in Sources */,
 				32CEFF821CEA31440099E546 /* BangumiNewFanCell.m in Sources */,
+				321C3AC91D0028AC00FBD5E2 /* CommonModel.m in Sources */,
 				32B658621CD3BA860050C704 /* __BiLibili.xcdatamodeld in Sources */,
 				32CEFF731CE62D8A0099E546 /* BiLi_DBManager.m in Sources */,
 				32B658591CD3BA850050C704 /* AppDelegate.m in Sources */,

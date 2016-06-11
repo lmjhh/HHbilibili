@@ -21,5 +21,7 @@
 
 - (NSDateComponents *)deltaWithNow;//日期和当前日期的差的天数
 
+- (NSString *)getTimeDistance;
+
 @end
 

@@ -8,13 +8,20 @@
 
 #import "VideoInfoViewController.h"
 #import "FanDetailHeadView.h"
+#import "CommonModel.h"
 #import "VideoPlayViewController.h"
+#import "CommonsTableViewCell.h"
 
-@interface VideoInfoViewController ()<FanDetailDelegate>
+#define pagesize @20
+#define page @1
+
+@interface VideoInfoViewController ()<FanDetailDelegate,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 @property (nonatomic,strong) FanData *headData;
+@property (nonatomic,strong) CommonModel *commonData;
 @property (nonatomic,strong) BPData *bpData;
 @property (nonatomic,strong) FanDetailHeadView *headView;
+@property (nonatomic,strong) UITableView *tableView;
 
 @end
 
@@ -22,26 +29,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(layoutHeadView:) name:@"layoutHeadView" object:nil];
+    self.isPresentView = false;
+    
+    [self navigationBarSet];
+    [self buildTableHeadView];
+    [self buildTableView];
     [self loadDataFromNet:self.seasonId isUpdate:YES];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated{
     
     [super viewWillDisappear:animated];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    self.navigationController.navigationBar.alpha = 1;
     
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)navigationBarSet{
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    self.navigationController.navigationBar.alpha = 0;
+    self.title = @"番剧详情";
     
 }
 
@@ -54,24 +65,38 @@
 
 - (void)buildTableHeadView{
     
-    [self.view addSubview:({
         
-          FanDetailHeadView *HeadView = [[FanDetailHeadView alloc] init];
-          HeadView.delegate = self;
-          NSInteger selectSeasonRow = _headData.seasons.count > 0 ? 1 : 0;
-          NSInteger selectRow = _headData.episodes.count / 4;
-          if(_headData.episodes.count % 4 > 0){
-              selectRow = _headData.episodes.count / 4 + 1;
-          }
-        NSInteger isAllowBP = [_headData.allow_bp isEqualToString:@"0"] ? 0:50;
-          CGFloat tableHeadViewHeight = BScreen_Width*0.47 + 35 +  selectSeasonRow * 45 + selectRow * (40 + (BScreen_Width -350)/3) + (60 - (BScreen_Width -350)/3) + 20 + isAllowBP;
-          HeadView.frame = CGRectMake(0, 0, BScreen_Width, tableHeadViewHeight);
-        
-          HeadView;
-        
-    })];
+    self.headView = [[FanDetailHeadView alloc] initWithFrame:CGRectZero];
+    self.headView.delegate = self;
     
     
+    
+}
+
+- (void)buildTableView{
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -20, BScreen_Width, BScreen_Height) style:UITableViewStylePlain];
+
+    [self.tableView registerNib:[UINib nibWithNibName:@"CommonsTableViewCell" bundle:nil]forCellReuseIdentifier:@"commonCell"];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.tableHeaderView = self.headView;
+    self.tableView.backgroundColor = BBackgroundColor;
+    [self.tableView setTableFooterView:[[UIView alloc]initWithFrame:CGRectZero]];
+    [self.view addSubview:self.tableView];
+    
+}
+
+- (void)layoutHeadView:(NSNotification*) aNotification{
+    
+    NSDictionary *heigh = aNotification.userInfo;
+    
+    NSString *tableHeadViewHeight = [heigh valueForKey:@"height"];
+    
+    self.headView.frame = CGRectMake(0, 0, BScreen_Width, [tableHeadViewHeight doubleValue]);
+    if(!self.isPresentView){
+        self.tableView.tableHeaderView = self.headView;
+    }
 }
 
 
@@ -93,39 +118,51 @@
         
     }];
     
+    
+    
     [[BiLi_NetAPIManager sharedManager] request_TheatreDetailDataWithBlock:self.seasonId block:^(id data, NSError *error) {
         
         FanData *fandata = [FanData mj_objectWithKeyValues:data];
         
         _headData = fandata;
         
+        Episode *epi = fandata.episodes.lastObject;
+        NSString *bpCount = epi.index;
+        NSString *av_id = epi.av_id;
+        
+        if(fandata.is_finish.integerValue<1){
+            
+            epi = fandata.episodes.firstObject;
+            av_id = epi.av_id;
+        }
+        
         if(![fandata.allow_bp  isEqual: @"0"]){
             
-            Episode *epi = fandata.episodes.lastObject;
-            NSString *bpCount = epi.index;
-            NSString *av_id = epi.av_id;
-            
-            if(fandata.is_finish.integerValue<1){
-                
-                epi = fandata.episodes.firstObject;
-                av_id = epi.av_id;
-            }
-            
+        
+        [_headView setData:_headData isUpdateSeason:isUpdate];
             
             [[BiLi_NetAPIManager sharedManager] request_VideoBPDataWithBlock:av_id block:^(id data, NSError *error) {
                 
                 BPData *Data = [BPData mj_objectWithKeyValues:data];
                 self.bpData = Data;
-                [self buildTableHeadView];
                 [self.headView setBpdata:self.bpData count:bpCount];
                 
             }];
             
         }
-        [self buildTableHeadView];
-        [_headView setData:_headData isUpdateSeason:YES];
+        
+        [[BiLi_NetAPIManager sharedManager] request_VideoCommonDataWithBlock:@{@"pagesize":pagesize.stringValue, @"page":page.stringValue, @"aid": av_id} block:^(id data, NSError *error) {
+            
+            CommonModel *comm = [CommonModel mj_objectWithKeyValues:data];
+            
+            self.commonData = comm;
+            [self.tableView reloadData];
+            
+        }];
+        
         
     }];
+    
 }
 
 
@@ -166,10 +203,55 @@
         [self.headView setBpdata:self.bpData count:ep.index];
         
     }];
+    self.isPresentView = true;
     [self presentViewController:[[VideoPlayViewController alloc] initWithAid:ep.av_id] animated:YES completion:nil];
     
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.commonData.hotList.count;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ReplyDataModel *reModel = self.commonData.hotList[indexPath.row];
+    
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:12]};
+    CGSize retSize = [reModel.msg boundingRectWithSize:CGSizeMake(BScreen_Width - 68, 0)
+                                             options:\
+                      NSStringDrawingTruncatesLastVisibleLine |
+                      NSStringDrawingUsesLineFragmentOrigin |
+                      NSStringDrawingUsesFontLeading
+                                          attributes:attribute
+                                             context:nil].size;
+    
+                             return retSize.height + 65;
+    
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    CommonsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"commonCell"];
+    [cell setData:self.commonData.hotList[indexPath.row]];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    return cell;
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    self.navigationController.navigationBar.alpha = 1 - (64 - scrollView.contentOffset.y - 20)/64;
+    
+}
 
 /*
 #pragma mark - Navigation

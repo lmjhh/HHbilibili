@@ -11,6 +11,7 @@
 
 @interface VideoInfoViewController : BaseViewController
 
+@property (nonatomic,assign) BOOL isPresentView;
 @property (nonatomic,strong) NSString *seasonId;
 
 @end

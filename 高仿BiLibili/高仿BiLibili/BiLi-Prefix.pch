@@ -30,8 +30,20 @@
 #import "UILabel+StringFrame.h"
 #import "NSString+Extension.h"
 #import "BiLi_NetAPIManager.h"
+#import "NSDictionary+Extension.h"
 
 #endif
+
+/**
+ *  appkey
+ */
+#define APPKEY @""
+
+/**
+ *  appsec
+ */
+#define APPSEC @""
+
 
 // APP主题颜色
 #define BMainColor [UIColor colorWithCustom:251 green:114 blue:153]

@@ -40,6 +40,139 @@
     
 }
 
+- (NSString *)getTimeDistance{
+    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    
+    fmt.dateFormat = @"yyyy";
+    
+    NSString *selfStr = [fmt stringFromDate:self];
+    
+    NSInteger selfTime = [selfStr integerValue];
+    
+    NSString *nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+    
+    NSInteger nowTime = [nowStr integerValue];
+    
+    
+    if(nowTime != selfTime){
+        
+        if(nowTime - selfTime > 1){
+            return [NSString stringWithFormat:@"%ld年前",nowTime - selfTime];
+        }
+        fmt.dateFormat = @"MM";
+        
+        selfStr = [fmt stringFromDate:self];
+        selfTime = [selfStr integerValue];
+        
+        nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+        nowTime = [nowStr integerValue];
+        
+        if(nowTime + 12 - selfTime < 12){
+            return [NSString stringWithFormat:@"%ld月前",nowTime + 12 - selfTime];
+        }
+        
+        return @"1年前";
+        
+    }
+    
+    fmt.dateFormat = @"MM";
+    
+    selfStr = [fmt stringFromDate:self];
+    selfTime = [selfStr integerValue];
+    
+    nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+    nowTime = [nowStr integerValue];
+    
+    if(selfTime != nowTime){
+        
+        if(nowTime - selfTime > 1){
+            return [NSString stringWithFormat:@"%ld月前",nowTime - selfTime];
+        }
+        fmt.dateFormat = @"dd";
+        
+        selfStr = [fmt stringFromDate:self];
+        selfTime = [selfStr integerValue];
+        
+        nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+        nowTime = [nowStr integerValue];
+        
+        if(nowTime + 30 - selfTime < 30){
+            return [NSString stringWithFormat:@"%ld日前",nowTime + 30 - selfTime];
+        }
+        
+        return @"1月前";
+        
+    }
+    
+    fmt.dateFormat = @"dd";
+    
+    selfStr = [fmt stringFromDate:self];
+    selfTime = [selfStr integerValue];
+    
+    nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+    nowTime = [nowStr integerValue];
+    
+    if(selfTime != nowTime){
+        
+        if(nowTime - selfTime > 1){
+            return [NSString stringWithFormat:@"%ld天前",nowTime - selfTime];
+        }
+        fmt.dateFormat = @"HH";
+        
+        selfStr = [fmt stringFromDate:self];
+        selfTime = [selfStr integerValue];
+        
+        nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+        nowTime = [nowStr integerValue];
+        
+        if(nowTime + (24 -selfTime) < 24){
+            return [NSString stringWithFormat:@"%ld小时前",nowTime + (24 -selfTime)];
+        }
+        
+        return @"1天前";
+    }
+    
+    fmt.dateFormat = @"HH";
+    
+    selfStr = [fmt stringFromDate:self];
+    selfTime = [selfStr integerValue];
+    
+    nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+    nowTime = [nowStr integerValue];
+    
+    if(selfTime != nowTime){
+        
+        if(nowTime - selfTime > 1){
+            return [NSString stringWithFormat:@"%ld小时前",nowTime - selfTime];
+        }
+        fmt.dateFormat = @"mm";
+        
+        selfStr = [fmt stringFromDate:self];
+        selfTime = [selfStr integerValue];
+        
+        nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+        nowTime = [nowStr integerValue];
+        
+        if(nowTime + 60 - selfTime < 60){
+            return [NSString stringWithFormat:@"%ld分钟前",nowTime + 60 - selfTime];
+        }
+        
+        return @"1小时前";
+    }
+    
+    fmt.dateFormat = @"mm";
+    
+    selfStr = [fmt stringFromDate:self];
+    selfTime = [selfStr integerValue];
+    
+    nowStr = [fmt stringFromDate:[[NSDate alloc] init]];
+    nowTime = [nowStr integerValue];
+
+    return [NSString stringWithFormat:@"%ld分钟前",nowTime - selfTime];
+    
+}
+
 - (NSString *)getToday{
     
     

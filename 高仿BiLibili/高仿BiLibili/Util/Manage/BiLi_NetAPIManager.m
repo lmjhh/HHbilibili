@@ -110,17 +110,26 @@
                  
                  if (HTML != nil) {
                      
+                     
                      NSMutableString* str = [NSMutableString stringWithString:HTML];
                      
-                     [str deleteCharactersInRange:NSMakeRange(0, 20)];
+                     [str deleteCharactersInRange:NSMakeRange(0, 19)];
                      
                      [str deleteCharactersInRange:NSMakeRange(str.length - 2, 2)];
+                     
+                     if([str characterAtIndex:0] == '('){
+                         [str deleteCharactersInRange:NSMakeRange(0, 1)];
+                     }
                      
                      NSData* d = [str dataUsingEncoding:NSUTF8StringEncoding];
                      
                      NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:d options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
                      
+                     NSLog(@"%@",str);
+                     
                      NSDictionary* dictM = [dict valueForKey:@"result"];
+                     
+                     
                      block(dictM,nil);
 
                  }
@@ -142,6 +151,39 @@
       
         block(data,nil);
         
+    }];
+    
+}
+
+- (void)request_VideoCommonDataWithBlock:(NSDictionary*)parm block:(void (^)(id data,NSError *error))block{
+    
+    //http://api.bilibili.com/feedback?type=jsonp&ver=3&callback=jQuery172019889523880556226_1446769749937&mode=arc&aid=3118012&pagesize=20&page=1&_=1446769758188
+    //aid pagesize page
+    NSString*URL = [parm appendGetParameterWithBasePath:@"http://api.bilibili.com/feedback?type=jsonp&ver=3&callback=jQuery172019889523880556226_1446769749937&mode=arc&_=1446769758188&"];
+    
+    NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:URL]];
+    
+    UIWebView* web = [[UIWebView alloc] init];
+    NSProgress* progress = nil;
+    [web loadRequest:req progress:&progress
+             success:^NSString* _Nonnull(NSHTTPURLResponse* _Nonnull response, NSString* _Nonnull HTML) {
+                 
+                 if (HTML != nil) {
+                     
+                NSMutableString* dataStr = [NSMutableString stringWithString:HTML];
+                     
+                NSString* str = [dataStr subStringsWithRegularExpression:@"\\{.*\\}"].firstObject;
+                     
+                     NSDictionary* js = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves|NSJSONReadingAllowFragments error:nil];
+                     
+                     
+                     block(js,nil);
+                     
+                     
+                 }
+                 return HTML;
+             }
+             failure:^(NSError* _Nonnull error){
     }];
     
 }

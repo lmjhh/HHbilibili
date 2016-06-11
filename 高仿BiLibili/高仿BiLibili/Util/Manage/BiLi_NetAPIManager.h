@@ -26,6 +26,8 @@
 - (void)request_TheatreDetailDataWithBlock:(NSString *) parm block:(void (^)(id data,NSError *error))block;
 //获取番剧承包情况
 - (void)request_VideoBPDataWithBlock:(NSString *)av_id block:(void (^)(id data,NSError *error))block;
+//获取评论
+- (void)request_VideoCommonDataWithBlock:(NSDictionary*)parm block:(void (^)(id data,NSError *error))block;
 
 #pragma mark - live
 

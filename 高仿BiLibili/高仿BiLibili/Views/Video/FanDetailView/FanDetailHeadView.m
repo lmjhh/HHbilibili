@@ -20,6 +20,7 @@
 @property (nonatomic,strong) SelectSeasonsView *selectSeasonsView;
 @property (nonatomic,strong) SelectVideoView *selectVideoView;
 @property (nonatomic,strong) BPView *bpView;
+@property (nonatomic,strong) FanIntroductionView *fanIntroductionView;
 
 
 @end
@@ -39,6 +40,7 @@
         [self bulidSelectView];
         [self bulidSelectSeasonsView];
         [self buildBPView];
+        [self buildFanIntroductionView];
         
     }
     return  self;
@@ -47,6 +49,7 @@
 - (void)setData:(FanData *)data isUpdateSeason:(BOOL)isUpdateSeason{
     
     _data = data;
+    
     
     [self.backgroundImageView sd_setImageWithURL:[NSURL URLWithString:_data.cover] ];
     
@@ -86,6 +89,9 @@
     if(_data.seasons.count > 0 && isUpdateSeason){
         [self.selectSeasonsView setData:_data.seasons endTitle:_data.season_title endSeasonId:_data.season_id];
     }
+    
+    NSArray *tagArray = [_data.tags valueForKey:@"tag_name"];
+    [self.fanIntroductionView setData:self.data.brief tags:tagArray];
     
     [self layoutSubviews];
     
@@ -207,6 +213,13 @@
     
 }
 
+- (void)buildFanIntroductionView{
+    
+    self.fanIntroductionView = [[FanIntroductionView alloc] init];
+    
+    [self addSubview:self.fanIntroductionView];
+    
+}
 
 - (void)titleButtonClick:(UIGestureRecognizer *)tap{
     
@@ -360,7 +373,11 @@
         self.bpView.frame = CGRectMake(self.selectSeasonsView.frame.origin.x, CGRectGetMaxY(self.selectVideoView.frame), self.selectVideoView.frame.size.width, 50);
     }else {
         self.bpView.hidden = true;
+        self.bpView.frame = CGRectMake(self.selectSeasonsView.frame.origin.x, CGRectGetMaxY(self.selectVideoView.frame), self.selectVideoView.frame.size.width, 0);
     }
+    
+    self.fanIntroductionView.frame = CGRectMake(0, CGRectGetMaxY(self.bpView.frame) + 10, BScreen_Width, 0);
+    
     
 }
 

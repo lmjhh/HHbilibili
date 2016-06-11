@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FanData.h"
 #import "BPData.h"
+#import "FanIntroductionView.h"
 #import "VideoInfoButtonView.h"
 #import "SelectVideoView.h"
 #import "SelectSeasonsView.h"
