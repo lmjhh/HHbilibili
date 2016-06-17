@@ -11,6 +11,7 @@
 #import "CommonModel.h"
 #import "VideoPlayViewController.h"
 #import "CommonsTableViewCell.h"
+#import "YYFPSLabel.h"
 
 #define pagesize @20
 #define page @1
@@ -37,6 +38,31 @@
     [self buildTableHeadView];
     [self buildTableView];
     [self loadDataFromNet:self.seasonId isUpdate:YES];
+
+}
+
+- (void)viewWillLayoutSubviews{
+    
+    [super viewWillLayoutSubviews];
+}
+
+- (void)viewDidLayoutSubviews{
+    
+    
+    
+    [super viewDidLayoutSubviews];
+    self.view.frame = CGRectMake(0, 0, BScreen_Width, BScreen_Height);
+    
+    self.navigationController.navigationBar.alpha = 1 - (64 - self.tableView.contentOffset.y)/64;
+    if(self.navigationController.navigationBar.alpha >= 1){
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    }else{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }
+    
+    self.tableView.tableHeaderView = self.headView;
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -48,18 +74,16 @@
     
 }
 
-- (void)navigationBarSet{
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-    self.navigationController.navigationBar.alpha = 0;
-    self.title = @"番剧详情";
-    
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)navigationBarSet{
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    self.title = @"番剧详情";
+    
 }
 
 
@@ -75,14 +99,19 @@
 
 - (void)buildTableView{
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -20, BScreen_Width, BScreen_Height) style:UITableViewStylePlain];
-
+    self.view.frame = CGRectMake(0, 0, BScreen_Width, BScreen_Height);
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.tableView.bounces = NO;
     [self.tableView registerNib:[UINib nibWithNibName:@"CommonsTableViewCell" bundle:nil]forCellReuseIdentifier:@"commonCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableHeaderView = self.headView;
     self.tableView.backgroundColor = BBackgroundColor;
     [self.tableView setTableFooterView:[[UIView alloc]initWithFrame:CGRectZero]];
+    
+    self.edgesForExtendedLayout=UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars=NO;
+    
     [self.view addSubview:self.tableView];
     
 }
@@ -124,7 +153,7 @@
         
         FanData *fandata = [FanData mj_objectWithKeyValues:data];
         
-        _headData = fandata;
+        self.headData = fandata;
         
         Episode *epi = fandata.episodes.lastObject;
         NSString *bpCount = epi.index;
@@ -136,10 +165,9 @@
             av_id = epi.av_id;
         }
         
-        if(![fandata.allow_bp  isEqual: @"0"]){
-            
-        
         [_headView setData:_headData isUpdateSeason:isUpdate];
+        
+        if(![fandata.allow_bp  isEqual: @"0"]){
             
             [[BiLi_NetAPIManager sharedManager] request_VideoBPDataWithBlock:av_id block:^(id data, NSError *error) {
                 
@@ -196,13 +224,17 @@
 - (void)fanDetailSelectVideoClick:(NSInteger)index{
     
     Episode *ep = _headData.episodes[index];
-    [[BiLi_NetAPIManager sharedManager] request_VideoBPDataWithBlock:ep.av_id block:^(id data, NSError *error) {
+    if(![self.headData.allow_bp  isEqual: @"0"]){
         
-        BPData *Data = [BPData mj_objectWithKeyValues:data];
-        self.bpData = Data;
-        [self.headView setBpdata:self.bpData count:ep.index];
+        [[BiLi_NetAPIManager sharedManager] request_VideoBPDataWithBlock:ep.av_id block:^(id data, NSError *error) {
+            
+            BPData *Data = [BPData mj_objectWithKeyValues:data];
+            self.bpData = Data;
+            [self.headView setBpdata:self.bpData count:ep.index];
+            
+        }];
         
-    }];
+    }
     self.isPresentView = true;
     [self presentViewController:[[VideoPlayViewController alloc] initWithAid:ep.av_id] animated:YES completion:nil];
     
@@ -249,7 +281,12 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    self.navigationController.navigationBar.alpha = 1 - (64 - scrollView.contentOffset.y - 20)/64;
+    self.navigationController.navigationBar.alpha = 1 - (64 - scrollView.contentOffset.y)/64;
+    if(self.navigationController.navigationBar.alpha >= 1){
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    }else{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }
     
 }
 

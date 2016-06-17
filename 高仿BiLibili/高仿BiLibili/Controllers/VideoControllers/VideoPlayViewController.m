@@ -232,6 +232,15 @@
 }
 
 - (void)playerTouchBackArrow:(VideoPlayerView *)UIView{
+    [self playerPause];
+    self.player = nil;
+    self.rander = nil;
+    self.playerView = nil;
+    [self.player replaceCurrentItemWithPlayerItem:nil];
+    [self.view.layer removeAllAnimations];
+    [self.layer removeAllAnimations];
+    [self.layer removeFromSuperlayer];
+    [self.timer invalidate];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

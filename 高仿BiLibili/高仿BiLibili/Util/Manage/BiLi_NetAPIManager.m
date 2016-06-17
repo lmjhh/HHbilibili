@@ -23,18 +23,16 @@
     return shared_Manager;
 }
 
+
 - (void)request_DirectSeedingDataWithBlock:(void (^)(id, NSError *))block{
     
-    [[BiLi_NetAPIClient sharedJsonClient] requestJsonDataWithPath:@"首页数据" returnBlock:^(id data, NSError *error) {
+//http://live.bilibili.com/AppIndex/home?access_key=244c7b5d240538e9276cd4a929afb32b&actionKey=appkey&appkey=27eb53fc9058f8c3&build=3170&device=phone&platform=ios&scale=2&sign=731a6db3eff34603aa4f64e55edeb27c&ts=1466143902
+    
+    [[BiLi_NetAPIClient sharedJsonClient] requestJsonDataWithPath:@"http://live.bilibili.com/AppIndex/home?access_key=244c7b5d240538e9276cd4a929afb32b&actionKey=appkey&appkey=27eb53fc9058f8c3&build=3170&device=phone&platform=ios&scale=2&sign=731a6db3eff34603aa4f64e55edeb27c&ts=1466143902" withParams:nil withMethodType:Get andBlock:^(id data, NSError *error) {
         
-        id resultData = [data valueForKey:@"data"];
+        id result = [data valueForKey:@"data"];
         
-        if(resultData) {
-            block(resultData,nil);
-        }
-        else {
-            block(nil,error);
-        }
+        block(result,error);
         
     }];
     
@@ -111,23 +109,15 @@
                  if (HTML != nil) {
                      
                      
-                     NSMutableString* str = [NSMutableString stringWithString:HTML];
+                     NSMutableString* dataStr = [NSMutableString stringWithString:HTML];
                      
-                     [str deleteCharactersInRange:NSMakeRange(0, 19)];
+                     NSString* str = [dataStr subStringsWithRegularExpression:@"\\{.*\\}"].firstObject;
                      
-                     [str deleteCharactersInRange:NSMakeRange(str.length - 2, 2)];
+                     NSDictionary* js = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves|NSJSONReadingAllowFragments error:nil];
                      
-                     if([str characterAtIndex:0] == '('){
-                         [str deleteCharactersInRange:NSMakeRange(0, 1)];
-                     }
                      
-                     NSData* d = [str dataUsingEncoding:NSUTF8StringEncoding];
                      
-                     NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:d options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
-                     
-                     NSLog(@"%@",str);
-                     
-                     NSDictionary* dictM = [dict valueForKey:@"result"];
+                     NSDictionary* dictM = [js valueForKey:@"result"];
                      
                      
                      block(dictM,nil);

@@ -14,12 +14,16 @@
 		321C3ACC1D00336600FBD5E2 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3ACB1D00336600FBD5E2 /* NSDictionary+Extension.m */; };
 		321C3AD01D00899D00FBD5E2 /* CommonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3ACF1D00899D00FBD5E2 /* CommonsTableViewCell.m */; };
 		321C3AD21D008C4500FBD5E2 /* CommonsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321C3AD11D008C4500FBD5E2 /* CommonsTableViewCell.xib */; };
+		321C3AD81D11C49600FBD5E2 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3AD51D11C49600FBD5E2 /* YYFPSLabel.m */; };
+		321C3AD91D11C49600FBD5E2 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3AD71D11C49600FBD5E2 /* YYWeakProxy.m */; };
+		321C3AE21D13D5F400FBD5E2 /* DirectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3ADC1D13D5F400FBD5E2 /* DirectView.m */; };
+		321C3AE31D13D5F400FBD5E2 /* Home_DirectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3ADE1D13D5F400FBD5E2 /* Home_DirectTableViewCell.m */; };
+		321C3AE41D13D5F400FBD5E2 /* Home_DirectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321C3ADF1D13D5F400FBD5E2 /* Home_DirectTableViewCell.xib */; };
+		321C3AE51D13D5F400FBD5E2 /* HomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3AE11D13D5F400FBD5E2 /* HomeTableHeadView.m */; };
+		321C3AEA1D13D6BA00FBD5E2 /* Live_ColCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3AE91D13D6BA00FBD5E2 /* Live_ColCollectionViewCell.m */; };
+		321C3AEE1D13F2EE00FBD5E2 /* PartitionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3AED1D13F2EE00FBD5E2 /* PartitionCollectionViewCell.m */; };
 		3254A4281CDB86E2002E4830 /* HomeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4271CDB86E2002E4830 /* HomeData.m */; };
 		3254A42B1CDC7671002E4830 /* BiLiHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A42A1CDC7671002E4830 /* BiLiHotView.m */; };
-		3254A42F1CDCF5BD002E4830 /* HomeTableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A42E1CDCF5BD002E4830 /* HomeTableHeadView.m */; };
-		3254A4331CDE4BD6002E4830 /* Home_DirectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4311CDE4BD6002E4830 /* Home_DirectTableViewCell.m */; };
-		3254A4341CDE4BD6002E4830 /* Home_DirectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3254A4321CDE4BD6002E4830 /* Home_DirectTableViewCell.xib */; };
-		3254A4371CDE57B0002E4830 /* DirectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4361CDE57B0002E4830 /* DirectView.m */; };
 		3254A43F1CE0E686002E4830 /* BiLiRefreshButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A43E1CE0E686002E4830 /* BiLiRefreshButton.m */; };
 		3254A4451CE4A228002E4830 /* Live_AllDirectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4441CE4A228002E4830 /* Live_AllDirectController.m */; };
 		3254A4481CE4A670002E4830 /* Live_MostPopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4471CE4A670002E4830 /* Live_MostPopularViewController.m */; };
@@ -32,7 +36,6 @@
 		3254A47D1CE4E092002E4830 /* 最新直播2 in Resources */ = {isa = PBXBuildFile; fileRef = 3254A47C1CE4E091002E4830 /* 最新直播2 */; };
 		3254A47F1CE4E0A3002E4830 /* 最新直播3 in Resources */ = {isa = PBXBuildFile; fileRef = 3254A47E1CE4E0A3002E4830 /* 最新直播3 */; };
 		3254A4811CE4E0B4002E4830 /* 最新直播4 in Resources */ = {isa = PBXBuildFile; fileRef = 3254A4801CE4E0B4002E4830 /* 最新直播4 */; };
-		3254A4861CE4EEC7002E4830 /* Live_ColCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3254A4841CE4EEC7002E4830 /* Live_ColCollectionViewCell.m */; };
 		327476F31CFE9863003FCDA6 /* FanIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327476F21CFE9863003FCDA6 /* FanIntroductionView.m */; };
 		32A3A88F1CEE0D3B00B1BFB1 /* VideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A3A88E1CEE0D3B00B1BFB1 /* VideoPlayViewController.m */; };
 		32A3A8CA1CEE3C4D00B1BFB1 /* @$91X`{7~B}~XP0C[DG~XDI.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32A3A8921CEE3C4D00B1BFB1 /* @$91X`{7~B}~XP0C[DG~XDI.jpg */; };
@@ -218,17 +221,25 @@
 		321C3ACE1D00899D00FBD5E2 /* CommonsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonsTableViewCell.h; sourceTree = "<group>"; };
 		321C3ACF1D00899D00FBD5E2 /* CommonsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonsTableViewCell.m; sourceTree = "<group>"; };
 		321C3AD11D008C4500FBD5E2 /* CommonsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonsTableViewCell.xib; sourceTree = "<group>"; };
+		321C3AD41D11C49600FBD5E2 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		321C3AD51D11C49600FBD5E2 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		321C3AD61D11C49600FBD5E2 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		321C3AD71D11C49600FBD5E2 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		321C3ADB1D13D5F400FBD5E2 /* DirectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectView.h; sourceTree = "<group>"; };
+		321C3ADC1D13D5F400FBD5E2 /* DirectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectView.m; sourceTree = "<group>"; };
+		321C3ADD1D13D5F400FBD5E2 /* Home_DirectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home_DirectTableViewCell.h; sourceTree = "<group>"; };
+		321C3ADE1D13D5F400FBD5E2 /* Home_DirectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home_DirectTableViewCell.m; sourceTree = "<group>"; };
+		321C3ADF1D13D5F400FBD5E2 /* Home_DirectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home_DirectTableViewCell.xib; sourceTree = "<group>"; };
+		321C3AE01D13D5F400FBD5E2 /* HomeTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableHeadView.h; sourceTree = "<group>"; };
+		321C3AE11D13D5F400FBD5E2 /* HomeTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableHeadView.m; sourceTree = "<group>"; };
+		321C3AE81D13D6BA00FBD5E2 /* Live_ColCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Live_ColCollectionViewCell.h; sourceTree = "<group>"; };
+		321C3AE91D13D6BA00FBD5E2 /* Live_ColCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Live_ColCollectionViewCell.m; sourceTree = "<group>"; };
+		321C3AEC1D13F2EE00FBD5E2 /* PartitionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartitionCollectionViewCell.h; sourceTree = "<group>"; };
+		321C3AED1D13F2EE00FBD5E2 /* PartitionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartitionCollectionViewCell.m; sourceTree = "<group>"; };
 		3254A4261CDB86E2002E4830 /* HomeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeData.h; sourceTree = "<group>"; };
 		3254A4271CDB86E2002E4830 /* HomeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeData.m; sourceTree = "<group>"; };
 		3254A4291CDC7671002E4830 /* BiLiHotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BiLiHotView.h; path = BaseView/BiLiHotView.h; sourceTree = "<group>"; };
 		3254A42A1CDC7671002E4830 /* BiLiHotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BiLiHotView.m; path = BaseView/BiLiHotView.m; sourceTree = "<group>"; };
-		3254A42D1CDCF5BD002E4830 /* HomeTableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableHeadView.h; sourceTree = "<group>"; };
-		3254A42E1CDCF5BD002E4830 /* HomeTableHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableHeadView.m; sourceTree = "<group>"; };
-		3254A4301CDE4BD6002E4830 /* Home_DirectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home_DirectTableViewCell.h; sourceTree = "<group>"; };
-		3254A4311CDE4BD6002E4830 /* Home_DirectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home_DirectTableViewCell.m; sourceTree = "<group>"; };
-		3254A4321CDE4BD6002E4830 /* Home_DirectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home_DirectTableViewCell.xib; sourceTree = "<group>"; };
-		3254A4351CDE57B0002E4830 /* DirectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectView.h; sourceTree = "<group>"; };
-		3254A4361CDE57B0002E4830 /* DirectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectView.m; sourceTree = "<group>"; };
 		3254A43D1CE0E686002E4830 /* BiLiRefreshButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BiLiRefreshButton.h; path = BaseView/BiLiRefreshButton.h; sourceTree = "<group>"; };
 		3254A43E1CE0E686002E4830 /* BiLiRefreshButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BiLiRefreshButton.m; path = BaseView/BiLiRefreshButton.m; sourceTree = "<group>"; };
 		3254A4431CE4A228002E4830 /* Live_AllDirectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Live_AllDirectController.h; sourceTree = "<group>"; };
@@ -245,8 +256,6 @@
 		3254A47C1CE4E091002E4830 /* 最新直播2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "最新直播2"; sourceTree = "<group>"; };
 		3254A47E1CE4E0A3002E4830 /* 最新直播3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "最新直播3"; sourceTree = "<group>"; };
 		3254A4801CE4E0B4002E4830 /* 最新直播4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "最新直播4"; sourceTree = "<group>"; };
-		3254A4831CE4EEC7002E4830 /* Live_ColCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Live_ColCollectionViewCell.h; sourceTree = "<group>"; };
-		3254A4841CE4EEC7002E4830 /* Live_ColCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Live_ColCollectionViewCell.m; sourceTree = "<group>"; };
 		327476F11CFE9863003FCDA6 /* FanIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FanIntroductionView.h; sourceTree = "<group>"; };
 		327476F21CFE9863003FCDA6 /* FanIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FanIntroductionView.m; sourceTree = "<group>"; };
 		32A3A88D1CEE0D3B00B1BFB1 /* VideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayViewController.h; sourceTree = "<group>"; };
@@ -510,18 +519,64 @@
 			path = CommonsVIew;
 			sourceTree = "<group>";
 		};
+		321C3AD31D11C49600FBD5E2 /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				321C3AD41D11C49600FBD5E2 /* YYFPSLabel.h */,
+				321C3AD51D11C49600FBD5E2 /* YYFPSLabel.m */,
+				321C3AD61D11C49600FBD5E2 /* YYWeakProxy.h */,
+				321C3AD71D11C49600FBD5E2 /* YYWeakProxy.m */,
+			);
+			path = YYFPSLabel;
+			sourceTree = "<group>";
+		};
+		321C3ADA1D13D5F400FBD5E2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				321C3ADB1D13D5F400FBD5E2 /* DirectView.h */,
+				321C3ADC1D13D5F400FBD5E2 /* DirectView.m */,
+				321C3ADD1D13D5F400FBD5E2 /* Home_DirectTableViewCell.h */,
+				321C3ADE1D13D5F400FBD5E2 /* Home_DirectTableViewCell.m */,
+				321C3ADF1D13D5F400FBD5E2 /* Home_DirectTableViewCell.xib */,
+				321C3AE01D13D5F400FBD5E2 /* HomeTableHeadView.h */,
+				321C3AE11D13D5F400FBD5E2 /* HomeTableHeadView.m */,
+				321C3AE71D13D6BA00FBD5E2 /* Live */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		321C3AE61D13D61B00FBD5E2 /* Partition */ = {
+			isa = PBXGroup;
+			children = (
+				321C3AEB1D13F2C000FBD5E2 /* Cell */,
+			);
+			path = Partition;
+			sourceTree = "<group>";
+		};
+		321C3AE71D13D6BA00FBD5E2 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				321C3AE81D13D6BA00FBD5E2 /* Live_ColCollectionViewCell.h */,
+				321C3AE91D13D6BA00FBD5E2 /* Live_ColCollectionViewCell.m */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		321C3AEB1D13F2C000FBD5E2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				321C3AEC1D13F2EE00FBD5E2 /* PartitionCollectionViewCell.h */,
+				321C3AED1D13F2EE00FBD5E2 /* PartitionCollectionViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3254A42C1CDCF5A0002E4830 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				3254A42D1CDCF5BD002E4830 /* HomeTableHeadView.h */,
-				3254A42E1CDCF5BD002E4830 /* HomeTableHeadView.m */,
-				3254A4301CDE4BD6002E4830 /* Home_DirectTableViewCell.h */,
-				3254A4311CDE4BD6002E4830 /* Home_DirectTableViewCell.m */,
-				3254A4321CDE4BD6002E4830 /* Home_DirectTableViewCell.xib */,
-				3254A4351CDE57B0002E4830 /* DirectView.h */,
-				3254A4361CDE57B0002E4830 /* DirectView.m */,
-				3254A4821CE4EE96002E4830 /* Live */,
+				321C3ADA1D13D5F400FBD5E2 /* Home */,
 				32CEFF7B1CE9E2990099E546 /* Bangumi */,
+				321C3AE61D13D61B00FBD5E2 /* Partition */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -552,15 +607,6 @@
 				3254A4801CE4E0B4002E4830 /* 最新直播4 */,
 			);
 			path = "所有直播";
-			sourceTree = "<group>";
-		};
-		3254A4821CE4EE96002E4830 /* Live */ = {
-			isa = PBXGroup;
-			children = (
-				3254A4831CE4EEC7002E4830 /* Live_ColCollectionViewCell.h */,
-				3254A4841CE4EEC7002E4830 /* Live_ColCollectionViewCell.m */,
-			);
-			path = Live;
 			sourceTree = "<group>";
 		};
 		32A3A8911CEE3C4D00B1BFB1 /* 临时图标 */ = {
@@ -825,6 +871,7 @@
 				32A3A9081CEF7E0B00B1BFB1 /* BarrageRenderer */,
 				32CEFF661CE5CD240099E546 /* NinaPagerView */,
 				32E398431CD78C8B000EB5B0 /* RKSwipeBetweenViewControllers */,
+				321C3AD31D11C49600FBD5E2 /* YYFPSLabel */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -1222,7 +1269,6 @@
 				32A3A8F81CEE3C4D00B1BFB1 /* pauseBtn@3x.png in Resources */,
 				32A3A8D81CEE3C4D00B1BFB1 /* logo.funshion.com.png in Resources */,
 				3254A4731CE4DFF3002E4830 /* 最热直播1 in Resources */,
-				3254A4341CDE4BD6002E4830 /* Home_DirectTableViewCell.xib in Resources */,
 				32A3A8DB1CEE3C4D00B1BFB1 /* logo.hunantv.com@2x.png in Resources */,
 				32A3A8EE1CEE3C4D00B1BFB1 /* logo.tudou.com.png in Resources */,
 				32A3A8E81CEE3C4D00B1BFB1 /* logo.qq.com.png in Resources */,
@@ -1263,6 +1309,7 @@
 				32A3A8D91CEE3C4D00B1BFB1 /* logo.funshion.com@2x.png in Resources */,
 				32E398981CDA25AC000EB5B0 /* 番剧推荐3.txt in Resources */,
 				32E398991CDA25AC000EB5B0 /* 番剧推荐4.txt in Resources */,
+				321C3AE41D13D5F400FBD5E2 /* Home_DirectTableViewCell.xib in Resources */,
 				32E3988F1CDA25AC000EB5B0 /* 热门推荐.txt in Resources */,
 				32E3988E1CDA25AC000EB5B0 /* 游戏区.txt in Resources */,
 				32A3A8E61CEE3C4D00B1BFB1 /* logo.pptv.com.png in Resources */,
@@ -1376,8 +1423,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				321C3AD81D11C49600FBD5E2 /* YYFPSLabel.m in Sources */,
 				321C3ACC1D00336600FBD5E2 /* NSDictionary+Extension.m in Sources */,
+				321C3AEE1D13F2EE00FBD5E2 /* PartitionCollectionViewCell.m in Sources */,
 				32CEFF941CEB202B0099E546 /* EndView.m in Sources */,
+				321C3AE31D13D5F400FBD5E2 /* Home_DirectTableViewCell.m in Sources */,
 				3254A42B1CDC7671002E4830 /* BiLiHotView.m in Sources */,
 				3254A43F1CE0E686002E4830 /* BiLiRefreshButton.m in Sources */,
 				320923E01CFC298000A011F2 /* UILabel+StringFrame.m in Sources */,
@@ -1389,6 +1439,7 @@
 				32CEFF6E1CE5CD240099E546 /* NinaBaseView.m in Sources */,
 				32CEFFBF1CED85270099E546 /* SelectSeasonsView.m in Sources */,
 				32CEFF971CEB46820099E546 /* NSString+MD5.m in Sources */,
+				321C3AE21D13D5F400FBD5E2 /* DirectView.m in Sources */,
 				320923E81CFC8B1400A011F2 /* BPView.m in Sources */,
 				32A3A9371CEF7E0B00B1BFB1 /* BarrageWalkImageSpirit.m in Sources */,
 				32CEFFB81CECD4BE0099E546 /* NSString+Extension.m in Sources */,
@@ -1396,11 +1447,11 @@
 				32A3A93C1CEF7EB800B1BFB1 /* StrokeUILabel.m in Sources */,
 				3254A44B1CE4A68E002E4830 /* Live_MostNewViewController.m in Sources */,
 				32A3A93F1CEF7F1F00B1BFB1 /* VideoModel.m in Sources */,
+				321C3AEA1D13D6BA00FBD5E2 /* Live_ColCollectionViewCell.m in Sources */,
 				32E398531CD78FC9000EB5B0 /* Home_PartitionViewController.m in Sources */,
 				32A3A9451CEF816800B1BFB1 /* DanMuModel.m in Sources */,
 				32A3A92F1CEF7E0B00B1BFB1 /* BarrageRenderer.m in Sources */,
 				32E398501CD78FA6000EB5B0 /* Home_DirectSeedingViewController.m in Sources */,
-				3254A4331CDE4BD6002E4830 /* Home_DirectTableViewCell.m in Sources */,
 				32B658FE1CD50EFF0050C704 /* RootTableBarController.m in Sources */,
 				32A3A9341CEF7E0B00B1BFB1 /* BarrageFloatTextSpirit.m in Sources */,
 				32A3A9331CEF7E0B00B1BFB1 /* BarrageFloatSpirit.m in Sources */,
@@ -1408,11 +1459,9 @@
 				32A3A9391CEF7E0B00B1BFB1 /* BarrageWalkTextSpirit.m in Sources */,
 				32A3A9361CEF7E0B00B1BFB1 /* BarrageSpiritUtility.m in Sources */,
 				32A3A92E1CEF7E0B00B1BFB1 /* BarrageDispatcher.m in Sources */,
-				3254A4371CDE57B0002E4830 /* DirectView.m in Sources */,
 				32CEFF8C1CEB06280099E546 /* NSDate+Extension.m in Sources */,
 				32A3A94B1CF0289700B1BFB1 /* BarrageDescriptor+Tools.m in Sources */,
 				32B658A51CD4D3A70050C704 /* BiLi_NetAPIClient.m in Sources */,
-				3254A4861CE4EEC7002E4830 /* Live_ColCollectionViewCell.m in Sources */,
 				32CEFFAF1CEC8F850099E546 /* VideoInfoButtonView.m in Sources */,
 				32A3A9381CEF7E0B00B1BFB1 /* BarrageWalkSpirit.m in Sources */,
 				32A3A9071CEF39B800B1BFB1 /* PlayerSliderView.m in Sources */,
@@ -1433,14 +1482,15 @@
 				32B658991CD3BF440050C704 /* BaseViewController.m in Sources */,
 				32B659071CD62D1B0050C704 /* BaseNavigationController.m in Sources */,
 				32CEFFBC1CECEE760099E546 /* SelectVideoView.m in Sources */,
+				321C3AE51D13D5F400FBD5E2 /* HomeTableHeadView.m in Sources */,
 				32CEFFA11CEC1CC60099E546 /* FanDetailHeadView.m in Sources */,
 				32E398461CD78C8B000EB5B0 /* RKSwipeBetweenViewControllers.m in Sources */,
 				32E3984A1CD78F66000EB5B0 /* Home_RecommendViewController.m in Sources */,
 				32A3A92D1CEF7E0B00B1BFB1 /* BarrageDescriptor.m in Sources */,
-				3254A42F1CDCF5BD002E4830 /* HomeTableHeadView.m in Sources */,
 				32CEFF861CEA35380099E546 /* NewFanView.m in Sources */,
 				32E398A31CDA292F000EB5B0 /* BiLiPageScrollView.m in Sources */,
 				32B6590D1CD634DD0050C704 /* Mine_RootViewController.m in Sources */,
+				321C3AD91D11C49600FBD5E2 /* YYWeakProxy.m in Sources */,
 				32CEFF6F1CE5CD240099E546 /* NinaPagerView.m in Sources */,
 				32A3A9351CEF7E0B00B1BFB1 /* BarrageSpirit.m in Sources */,
 				32CEFF7E1CE9E2D00099E546 /* BangumiHeadView.m in Sources */,

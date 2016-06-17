@@ -21,6 +21,7 @@
 @property (nonatomic,strong) SelectVideoView *selectVideoView;
 @property (nonatomic,strong) BPView *bpView;
 @property (nonatomic,strong) FanIntroductionView *fanIntroductionView;
+@property (nonatomic,strong) UIView *bottomLineView;
 
 
 @end
@@ -219,6 +220,10 @@
     
     [self addSubview:self.fanIntroductionView];
     
+    self.bottomLineView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.bottomLineView setBackgroundColor:[UIColor colorWithCustomAndAlpha:120 green:120 blue:120 alpha:0.3]];
+    [self addSubview:self.bottomLineView];
+    
 }
 
 - (void)titleButtonClick:(UIGestureRecognizer *)tap{
@@ -377,7 +382,7 @@
     }
     
     self.fanIntroductionView.frame = CGRectMake(0, CGRectGetMaxY(self.bpView.frame) + 10, BScreen_Width, 0);
-    
+    self.bottomLineView.frame = CGRectMake(0, CGRectGetMaxY(self.frame), BScreen_Width, 0.5);
     
 }
 

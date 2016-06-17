@@ -114,11 +114,13 @@
         BangumiNewFanCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"BangumiNewFanCell"];
         cell.delegate = self;
         [cell setData:_headData.latestUpdate];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         return cell;
     }else if(indexPath.section == 1){
         EndFanCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"EndFanCell"];
         cell.delegate = self;
         [cell setData:_headData.ends];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         return cell;
     }
     

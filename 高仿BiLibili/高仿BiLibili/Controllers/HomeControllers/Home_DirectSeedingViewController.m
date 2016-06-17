@@ -22,10 +22,10 @@
 @implementation Home_DirectSeedingViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self buildTableView];
     [self buildTableHeadView];
+    [super viewDidLoad];
     [self loadDataFromNet];
     
 }
@@ -78,6 +78,8 @@
         _homeData = [HomeData mj_objectWithKeyValues:data];
         
         [_tableHeadView setHeadData:_homeData];
+        
+        [self.tableView reloadData];
     }];
     
 }

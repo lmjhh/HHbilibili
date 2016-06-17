@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "BiLiPageScrollView.h"
+#import "YYFPSLabel.h"
 
 @interface BaseViewController ()
 
@@ -19,6 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view setBackgroundColor:BBackgroundColor];
+//    YYFPSLabel *fpsLabel = [[YYFPSLabel alloc] init];
+//    fpsLabel.frame = CGRectMake(5, self.view.frame.size.height - 30, 60, 16);
+//    [self.view addSubview:fpsLabel];
     
 }
 
